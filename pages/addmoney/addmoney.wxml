@@ -1,0 +1,12 @@
+<view class="all">
+    <view class="wrap">
+        <input type="number" placeholder="请输入充值金额" adjust-position value="{{money}}" bindinput="handleInput"/>
+        <button class="default" size="primary" type="primary" plain="default" 
+        bindtap="handleAdd">
+            充值
+        </button>
+          
+    </view>
+      
+    
+</view>

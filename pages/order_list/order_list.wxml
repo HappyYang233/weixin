@@ -1,0 +1,48 @@
+<view class="first_tab">
+    <navigator class="goods_item">
+        <!-- 左侧 图片容器 -->
+        <view class="goods_img_wrap">
+          <image mode="widthFix" src="../../image/huiguo.jpg"></image>
+        </view>
+        <!-- 右侧 商品容器 -->
+        <view class="goods_info_wrap">
+          <view class="goods_name">回锅肉</view>
+          <view class="time">2020/5/2</view>
+          <view class="goods_price">订单价格：8元</view>
+          <view class="status">
+            已完成
+        </view>
+        </view>
+      </navigator>
+      <navigator class="goods_item">
+        <!-- 左侧 图片容器 -->
+        <view class="goods_img_wrap">
+          <image mode="widthFix" src="../../image/chaofanxiao.png"></image>
+        </view>
+        <!-- 右侧 商品容器 -->
+        <view class="goods_info_wrap">
+          <view class="goods_name">蛋炒饭</view>
+          <view class="time">2020/5/2</view>
+          <view class="goods_price">订单价格：10元</view>
+          <view class="status">
+            已完成
+        </view>
+        </view>
+      </navigator>
+      <navigator class="goods_item">
+        <!-- 左侧 图片容器 -->
+        <view class="goods_img_wrap">
+          <image mode="widthFix" src="../../image/rousixiao.png"></image>
+        </view>
+        <!-- 右侧 商品容器 -->
+        <view class="goods_info_wrap">
+          <view class="goods_name">青椒炒肉</view>
+          <view class="time">2020/5/2</view>
+          <view class="goods_price">订单价格：12元</view>
+          <view class="status">
+              已完成
+          </view>
+            
+        </view>
+      </navigator>
+</view>

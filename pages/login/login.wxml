@@ -1,0 +1,9 @@
+<!--pages/login/login.wxml-->
+<view class="wrap">
+ 
+    <image class="" src="../../image/waimai.jpg" mode="scaleToFill" lazy-load="false" binderror="" bindload="" />
+    <button open-type="getUserInfo"  type="primary" bindgetuserinfo="handleGetUserInfo">微信授权登录</button>
+    
+      
+ </view>
+

@@ -1,0 +1,80 @@
+<!--pages/res_detail/res_detail.wxml-->
+<view class="wrap">
+    <view class="res_title">
+       {{name}}
+    </view>
+    <view class="zhanwei">
+        x
+    </view>
+    <view>
+        
+   
+      
+    <block wx:if="{{leftMenuList!=[]}}">
+        <view class="container" >
+            <scroll-view class="left_menu" scroll-y="true">
+                <view class="menu" 
+                wx:for="{{leftMenuList}}"
+                wx:key="id"
+                bindtap="handleClickCate"
+                data-id="{{item.id}}"
+                >
+                    {{item.name}}
+                </view>
+              
+            </scroll-view>
+            <scroll-view class="right_content" scroll-y="true">
+                <view class="content" 
+                wx:for="{{rightContent}}"
+                >
+                <view class="goods_image_wrap">
+                    <image class="" src="{{item.foodImageUrl}}" mode="scaleToFill" lazy-load="false" binderror="" bindload="" />
+                </view>
+                <view class="goods_info_wrap">
+                    <view class="goods_name">
+                        {{item.foodName}}
+                    </view>
+                    <view class="goods_dec">
+                        {{item.desc}}
+                    </view>
+                    <view class="good_selled">
+                        商品销量: {{item.totalSales}}
+                    </view>
+                    <view class="price_add_wrap">
+                        <view class="price">
+                            售价:{{item.price}}
+                        </view>
+                        <view class="add" bindtap="handleAdd" data-id="{{item.id}}">
+                            +
+                        </view>
+                          
+                    </view>
+                </view>
+                
+                </view>
+            </scroll-view>
+        </view>
+    </block>
+    <block wx:else class="wushangpin">
+        <image class="" src="../../waimai.jpg" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+          >
+          
+    </block>
+
+</view>
+    <view class="footer_tool">
+        <view class="car" bindtap="handleShowCar">
+            购物车
+        </view>
+        <!-- 总价格 -->
+        <view class="total_price_wrap">
+          <view class="total_price">
+            合计: <text class="total_price_text">{{totalPrice}}</text>
+          </view>
+        </view>
+        <!-- 结算 -->
+        <view class="order_pay_wrap" bindtap="handlePay" >
+              结算(0)
+        </view>
+      </view>
+</view>

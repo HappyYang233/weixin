@@ -1,0 +1,12 @@
+.all {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.all .wrap input {
+  height: 200rpx;
+  font-size: 60rpx;
+  text-align: center;
+}
