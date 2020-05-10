@@ -8,7 +8,7 @@ Page({
   onShow(){
     const userinfo=wx.getStorageSync("userInfo");
     // const collect=wx.getStorageSync("collect")||[];
-      
+    
     this.setData({
       userinfo:userinfo
     });

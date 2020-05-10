@@ -56,6 +56,11 @@ Page({
         
   //  }
    else{
+     console.log(this.data.money);
+     
+     console.log("100");
+     console.log(100);
+     console.log(money);
       let {data}=  await myrequest({url:"/wx/user/addmoney",data:{money},method:"post"});
       if(data.code==20)
       {
@@ -86,7 +91,10 @@ Page({
           duration: 1500,
           mask: false,
           success: (result) => {
-            
+            let userinfo = wx.getStorageSync("userInfo");
+            userinfo.wallet=userinfo.wallet+parseFloat(money);
+            wx.setStorageSync("userInfo",userinfo);
+              
           },
           fail: () => {},
           complete: () => {}

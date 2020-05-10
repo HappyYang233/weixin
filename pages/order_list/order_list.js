@@ -1,26 +1,42 @@
-import{request} from "../../request/index.js";
+import{myrequest} from "../../request/myrequest.js";
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    res_list:[]
+    orderList:[],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onShow: function () {
-    
+   this.getOrderList();
   },
-  async getResList(){
-    let num=5;
-    let res_list = await request({url:"/goods/search",data:num});
+  async getOrderList(){
+    let {data} = await myrequest({url:"/wx/order/findAll",data:{},method:"post"});
+    let orderList=data.msg;
     this.setData({
-      res_list:res_list.goods
+      orderList
     })
   },
+ handlefindOrderDetail(e)
+ {
+    let {index} = e.currentTarget.dataset;
+    let order= this.data.orderList[index];
+    let jsonString = JSON.stringify(order);
+    wx.navigateTo({
+      url: '../order_detail/order_detail?order='+jsonString,
+      success: (result) => {
+        
+      },
+      fail: () => {},
+      complete: () => {}
+    });
+      
+
+ },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

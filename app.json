@@ -9,7 +9,8 @@
     "pages/pay/pay",
     "pages/test/test",
     "pages/buycar/buycar",
-    "pages/addmoney/addmoney"
+    "pages/addmoney/addmoney",
+    "pages/order_detail/order_detail"
   ],
   "window": {
     "backgroundTextStyle":"light",
