@@ -11,6 +11,7 @@ Page({
     allRightContent:[],
     name:null,
     totalPrice:0,
+    totalNum:0
   },
   allRightContent:[],
   /**
@@ -21,10 +22,12 @@ Page({
       let buyCar = wx.getStorageSync("buyCar")||[];
       console.log(buyCar);
       let totalPrice=0;
+      let totalNum=0;
       if(buyCar!=[])
       {
           buyCar.forEach(x=>{
           totalPrice+=x.num*x.price;
+          totalNum+=x.num;
         });
         console.log(totalPrice);
       }
@@ -44,7 +47,8 @@ Page({
           this.setData({
             leftMenuList:leftMenuList,
             rightContent:newArray,
-            totalPrice:totalPrice
+            totalPrice:totalPrice,
+            totalNum:totalNum
           })
       }
       this.setData({
@@ -102,12 +106,16 @@ Page({
       buyCar[index].num+=1;
     }
     wx.setStorageSync("buyCar",buyCar);
-    let totalPrice=0
+    let totalPrice=0;
+    let totalNum=0;
     buyCar.forEach(v=>{
       totalPrice+=v.price*v.num;
+      totalNum+=v.num;
+      console.log(totalNum);
     });
     this.setData({
       totalPrice,
+      totalNum
     })
   },
   /**
@@ -122,15 +130,18 @@ Page({
    */
   onShow: function () {
     let buyCar = wx.getStorageSync("buyCar")||[];
-    let totalPrice=0
+    let totalPrice=0;
+    let totalNum=0;
     if(buyCar!=[])
     {
       buyCar.forEach(v=>{
         totalPrice+=v.price*v.num;
+        totalNum+=v.num;
       });
     }
     this.setData({
       totalPrice,
+      totalNum
     })
   },
 
@@ -169,50 +180,3 @@ Page({
 
   }
 })
-
-
-    // var  rightContent=[
-    //     {"src":"../../image/huiguo.jpg",
-    //       "name":"回锅肉",
-    //       "dec":"正宗回锅肉",
-    //       "num":"2",
-    //       "price":"8"
-    //     },
-    //     {"src":"../../image/rousixiao.png",
-    //     "name":"青椒肉丝",
-    //     "dec":"巴适",
-    //     "num":"5",
-    //     "price":"10"
-    //     },
-    //     {"src":"../../image/luroufanxiao.png",
-    //   "name":"卤肉饭",
-    //   "dec":"真材实料",
-    //   "num":"8",
-    //   "price":"15"
-    //  },
-    //   {"src":"../../image/chaofanxiao.png",
-    // "name":"蛋炒饭",
-    // "dec":"",
-    // "num":"12",
-    // "price":"5"
-    //  }
-    //   ];
-    //   wx.setStorageSync("info",rightContent);
-    //   var address =[
-    //     {"addressId":1,
-    //       "resId":1,
-    //       "addressInfo":"尚美苑后门"
-    //     },
-    //     {"addressId":2,
-    //       "resId":1,
-    //       "addressInfo":"尚美苑前门"
-    //     },
-    //     { "addressId":3,
-    //        "resId":1,
-    //      "addressInfo":"七教东门门口"       
-    //     }
-    //   ]
-    //   wx.setStorageSync("address",address);
-    //   this.setData({
-    //     rightContent:rightContent
-    //   })

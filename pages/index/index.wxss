@@ -7,16 +7,18 @@
   margin-left: 10rpx;
   margin-right: 10rpx;
   box-shadow: 10rpx 10rpx 5rpx #888888;
+  height: 200rpx;
 }
 .first_tab .goods_item .goods_img_wrap {
   flex: 2;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
 }
 .first_tab .goods_item .goods_img_wrap image {
-  
-    width: 50%;
+  padding: 10rpx;
+  height: 100%;
 }
 .first_tab .goods_item .goods_info_wrap {
   flex: 3;

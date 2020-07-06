@@ -1,0 +1,9 @@
+<view class="page">
+    <mp-msg type="success" title="支付成功">
+        <view slot="desc">午餐请在11-13点时间段取餐，晚餐请在17-19点时间段取餐</view>
+        <view slot="handle">
+            <button class="weui-btn" type="primary" bindtap="handleBack">回到首页</button>
+        </view>
+       
+    </mp-msg>
+</view>

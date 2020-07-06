@@ -64,7 +64,7 @@
 </view>
     <view class="footer_tool">
         <view class="car" bindtap="handleShowCar">
-            购物车
+            购物车<mp-badge content="{{totalNum}}" style="margin-left: 5px;"/>
         </view>
         <!-- 总价格 -->
         <view class="total_price_wrap">
@@ -74,7 +74,7 @@
         </view>
         <!-- 结算 -->
         <view class="order_pay_wrap" bindtap="handlePay" >
-              结算(0)
+              结算
         </view>
       </view>
 </view>

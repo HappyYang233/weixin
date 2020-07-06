@@ -111,6 +111,13 @@
 					"id": -1,
 					"name": "充值页面",
 					"pathName": "pages/addmoney/addmoney",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "success",
+					"pathName": "pages/success/success",
 					"scene": null
 				}
 			]

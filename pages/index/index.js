@@ -16,10 +16,10 @@ Page({
    */
 
   onLoad: function(){
-    this.getResList();
+   
   },
   onShow: function () {
-    
+    this.getResList();
   },
   
   // 获取食堂列表

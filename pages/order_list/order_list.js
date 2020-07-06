@@ -15,7 +15,7 @@ Page({
    this.getOrderList();
   },
   async getOrderList(){
-    let {data} = await myrequest({url:"/wx/order/findAll",data:{},method:"post"});
+    let {data} = await myrequest({url:"/order/findAll",data:{},method:"post"});
     let orderList=data.msg;
     this.setData({
       orderList

@@ -1,4 +1,5 @@
 /**app.wxss**/
+@import './weui-miniprogram/weui-wxss/dist/style/weui.wxss';
 @import'./style/icon.wxss';
 page,view,text,swiper,swiper-item,image,navigator{
   padding: 0;
@@ -7,7 +8,8 @@ page,view,text,swiper,swiper-item,image,navigator{
 }
 /* 统一定义样式 字体 主题等 */
 page{
---themeColor:#eb4450;
+/* --themeColor:#eb4450; */
+--themeColor:#409eff;
 font-size: 28rpx;
 }
 image{

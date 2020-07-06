@@ -10,11 +10,12 @@
     "pages/test/test",
     "pages/buycar/buycar",
     "pages/addmoney/addmoney",
-    "pages/order_detail/order_detail"
+    "pages/order_detail/order_detail",
+    "pages/success/success"
   ],
   "window": {
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#eb4450",
+     "navigationBarBackgroundColor": "#409eff",
     "navigationBarTitleText": "外卖",
     "navigationBarTextStyle":"white"
   },
@@ -46,5 +47,10 @@
     ]
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+    "useExtendedLib": {
+      "kbone": true,
+      "weui": true
+    }
+
 }

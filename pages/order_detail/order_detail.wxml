@@ -4,7 +4,10 @@
         <view class="title">订单编号：{{order.num}}</view>
     
     </view>
-          
+    <view class="address_wrapper">
+        <view class="title">用餐类型：{{order.foodType==0?'午餐':'晚餐'}}</view>
+    
+    </view>
     <view class="address_wrapper">
     <view class="title">取餐地址</view>
     <view class="group">

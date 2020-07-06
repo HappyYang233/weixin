@@ -108,7 +108,6 @@ page {
   color: #fff;
   font-size: 32rpx;
   font-weight: 600;
-  border: 2rpx solid red;
   background-color: var(--themeColor);
 }
 .wrap .footer_tool .total_price_wrap {

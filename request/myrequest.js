@@ -1,4 +1,5 @@
 // 同时发送异步代码的次数
+import {returnLogin} from '../utils/returnLogin'
 var app = getApp();
 let ajaxTimes=0;
 export const myrequest=(params)=>{
@@ -14,7 +15,8 @@ export const myrequest=(params)=>{
       title: "加载中",
       mask: true
     });
-    const baseUrl="http://192.168.0.105:8080";
+    const baseUrl="http://121.36.50.195:8082/wx";
+    // const baseUrl="http://localhost:8080/wx";
     return new Promise((resolve,reject)=>{
          wx.request({
             ...params,

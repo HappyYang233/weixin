@@ -6,7 +6,7 @@
     >
         <!-- 左侧 图片容器 -->
         <view class="goods_img_wrap">
-          <image mode="widthFix" src="{{item.resImageUrl}}"></image>
+          <image mode="scaleToFill" src="{{item.resImageUrl}}"></image>
         </view>
         <!-- 右侧 商品容器 -->
         <view class="goods_info_wrap">
@@ -14,4 +14,5 @@
           <view class="goods_price">公告： {{item.notice}}</view>
         </view>
       </view>
+    
 </view>

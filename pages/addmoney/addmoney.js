@@ -61,7 +61,7 @@ Page({
      console.log("100");
      console.log(100);
      console.log(money);
-      let {data}=  await myrequest({url:"/wx/user/addmoney",data:{money},method:"post"});
+      let {data}=  await myrequest({url:"/user/addmoney",data:{money},method:"post"});
       if(data.code==20)
       {
        reLoginModal();

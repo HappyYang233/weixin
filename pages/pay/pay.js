@@ -34,7 +34,7 @@ Page({
       });
   },
 async getAddress(resId){
-    let  {data} = await myrequest({url:"/wx/order/getAddress",data:{resId:resId},method:"post"});
+    let  {data} = await myrequest({url:"/order/getAddress",data:{resId:resId},method:"post"});
     let address = data.msg||[];
     if(address==[]){
       //不做处理
@@ -42,14 +42,14 @@ async getAddress(resId){
     else
     {
       address.forEach((x,index)=>{
-        if(index===0)
+        if(index===(address.length-1))
         {
-          address[index].checked="true";
+          address[index].checked=true;
           
         }
         else
         {
-          address[index].checked="false";
+          address[index].checked=false;
         }
       });
     }
@@ -58,6 +58,24 @@ async getAddress(resId){
       address:address
     })
   },
+  listenerRadioGroup(e){
+    let curAddress= e.detail.value;
+    let list = this.data.address;
+    list.forEach(x=>{
+      if(x.addressInfo==curAddress)
+      {
+        x.checked=true;
+      }
+      else
+      {
+        x.checked=false;
+      }
+    });
+    this.setData({
+      address:list
+    })
+  },
+
   confirm(){
     this.setData({
       hiddenmodalput:true
@@ -113,7 +131,7 @@ async  handlePay(){
         {
               let indexChecked = this.data.address.findIndex(x=>
               {
-                return x.checked==="true";
+                return x.checked===true;
               })
               let address = this.data.address[indexChecked];
               let userInfo=this.data.userInfo;
@@ -121,7 +139,7 @@ async  handlePay(){
               let totalPrice=this.data.totalPrice;
               let resId=this.data.cart[0].resId;
               let orderParams={address,userInfo,buyCar,totalPrice,resId};
-              let {data} = await myrequest({url:"/wx/order/pay",
+              let {data} = await myrequest({url:"/order/pay",
                                             data:orderParams,
                                             method:"post"});
               console.log(data.code);
@@ -163,29 +181,32 @@ async  handlePay(){
                   
               }
               else if(data.code===1){
-                wx.showModal({
-                  title: '提示',
-                  content: '下单成功，即将跳回主页',
-                  showCancel: false,
-                  confirmText: '确定',
-                  confirmColor: '#3CC51F',
-                  success: (result) => {
-                    if (result.confirm) {
+                // wx.showModal({
+                //   title: '提示',
+                //   content: '下单成功，即将跳回主页',
+                //   showCancel: false,
+                //   confirmText: '确定',
+                //   confirmColor: '#3CC51F',
+                //   success: (result) => {
+                //     if (result.confirm) {
                       
-                    }
-                  },
-                  fail: () => {},
-                  complete: () => {}
-                });
+                //     }
+                //   },
+                //   fail: () => {},
+                //   complete: () => {}
+                // });
                 wx.removeStorageSync("buyCar");
-                 wx.switchTab({
-                   url: '../index/index',
-                   success: (result) => {
+                wx.navigateTo({
+                  url: '../success/success',
+                });
+                //  wx.switchTab({
+                //    url: '../index/index',
+                //    success: (result) => {
                     
-                   },
-                   fail: () => {},
-                   complete: () => {}
-                 });
+                //    },
+                //    fail: () => {},
+                //    complete: () => {}
+                //  });
                    
                }
                else{

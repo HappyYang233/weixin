@@ -31,7 +31,7 @@ Page({
   },
   async getFoods(params)
   {
-    let {data} = await myrequest({url:"/wx/order/findOrderDetail",data:{params},method:"post"});
+    let {data} = await myrequest({url:"/order/findOrderDetail",data:{params},method:"post"});
     let foods=data.msg;
     foods.forEach(x=>{
       this.orderDetail.forEach(v=>{
@@ -60,7 +60,7 @@ Page({
      success: async (result) => {
         if (result.confirm)
          {
-          let {data}=await myrequest({url:"/wx/order/cancel" ,data:{id,totalMoney},method:"post"});
+          let {data}=await myrequest({url:"/order/cancel" ,data:{id,totalMoney},method:"post"});
           console.log("hdhashdhashdhashdhasd");
           console.log(data.code);
           if(data.code===9)
@@ -117,7 +117,7 @@ Page({
   },
   async cancel(id,totalMoney)
   {
-   let {data} = await myrequest({url:"/wx/order/cancel" ,data:{id,totalMoney},method:"post"});
+   let {data} = await myrequest({url:"/order/cancel" ,data:{id,totalMoney},method:"post"});
     console.log(data);
         return data;
   },

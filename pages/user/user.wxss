@@ -46,6 +46,17 @@ page {
   display: flex;
   justify-content: space-between;
 }
+.user_content .app_info_wrap .btn_box::after {
+  border: none;
+  border-radius: 0;
+}
+.user_content .app_info_wrap .btn_box {
+  border-radius: 0;
+  margin-left: 0rpx;
+  padding-left: 0rpx;
+  background-color: #fff;
+  text-align: left;
+}
 .user_content .recommend_wrap {
   background-color: #fff;
   padding: 20rpx ;
